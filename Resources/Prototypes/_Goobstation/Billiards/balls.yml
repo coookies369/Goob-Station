@@ -19,9 +19,8 @@
           mask:
             - ItemMask
           restitution: 1
-    - type: Physics
-      friction: 0.0
-      linearDamping: 0.0
+    - type: MovementIgnoreGravity
+      gravityState: True
 
 - type: entity
   id: BilliardBallCue
