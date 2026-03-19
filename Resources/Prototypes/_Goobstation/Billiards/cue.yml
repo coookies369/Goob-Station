@@ -3,9 +3,24 @@
   name: cue stick
   parent: BaseItem
   components:
+    - type: LandAtCursor
     - type: Sprite
       sprite: _Goobstation/Objects/Fun/Billiards/billiard_cue.rsi
       state: cue
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PolygonShape
+            vertices:
+              - -0.08,-0.06 # Goob edit
+              - -0.06,-0.08 # Goob edit
+              - 0.40,0.30
+              - 0.30,0.40
+          density: 20
+          mask:
+            - ItemMask
+          restitution: 0.3
+          friction: 0.2
     - type: MeleeWeapon
       animationRotation: -135
       canWideSwing: false
