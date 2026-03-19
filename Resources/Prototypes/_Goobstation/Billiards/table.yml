@@ -1,0 +1,33 @@
+- type: entity
+  id: BilliardTable
+  name: billiards table
+  parent: BaseStructure
+  placement:
+    mode: AlignTileAny
+  components:
+    - type: Sprite
+      sprite: _Goobstation/Objects/Fun/Billiards/billiard_table.rsi
+      offset: 0,-0.5
+      state: base
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: Wood
+    - type: PlaceableSurface
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeAabb
+            bounds: "-1.25,-1.25,1.25,0.25"
+          density: 55
+          mask: # tables should collide with other tables
+            - TableMask
+          layer:
+            - TableLayer
+            - BulletImpassable # Goobstation - Crawling
+    - type: SpriteFade
+    - type: Climbable
+    - type: Bonkable
+    - type: Clickable
+    - type: Anchorable
+      snap: False
+    - type: Rotatable
